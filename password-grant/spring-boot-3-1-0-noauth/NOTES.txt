@@ -1,0 +1,26 @@
+Adicionar Spring Security
+
+1 - Entidade user ja existe com os campos user e pass, no caso e-mail e password
+2 - Criar a entidade Role
+    Long id
+    String authority
+    Construtor sem argumentos
+    Construtor com argumentos
+    getters e setters
+    equals e hashcode (campo authority)
+3 - Mapear o JPA do Role
+    Entity
+    Table (tb_roles)
+4 - Mapear o N-N no User do Role
+    Set<Role> roles = new ...
+    MayToMany
+    JoinTable=tb_user_role,joinColumns=user_id,inverseJoinColumns=role_id
+5 - Criar metodo void addRole
+    roles.add(role)
+6 - Criar metodo boolean hasRole(String roleName)
+    for (Role role :  roles)
+        if (role.getAuthority.equals(roleName))
+            return true;
+7 - Verificar a criacao da tabela e do relacionamento
+8 - Adicionar ao seed as roles apos os usuarios
+    Observar o padrao do spring ROLE_...
