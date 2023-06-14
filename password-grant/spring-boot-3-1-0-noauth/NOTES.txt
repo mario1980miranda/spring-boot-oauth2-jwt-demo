@@ -26,4 +26,11 @@ Adicionar Spring Security
     Observar o padrao do spring ROLE_...
 
 9 - Criar uma classe (pkg /config) de configuracao (@Configuration) SecurityConfig com um metodo (@Bean) para liberar os endpoints para desenvolvimento.
-10 - 
+
+10 - BCrypt - disponibilizar componente para injetar um PasswordEncoder na applicacao.
+    criar um metodo @Bean do tipo PasswordEncoder getPasswordEncoder() return new BCryptPasswordEncoder();
+11 - Na classe principal
+    Injetar o component PasswordEncoder
+    Testar com implements CommandLineRunner
+    syso -> passwordEncode("123456")
+    adicionar o hash no seed no lugar da senha
