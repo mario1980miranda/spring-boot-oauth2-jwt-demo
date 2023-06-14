@@ -24,3 +24,6 @@ Adicionar Spring Security
 7 - Verificar a criacao da tabela e do relacionamento
 8 - Adicionar ao seed as roles apos os usuarios
     Observar o padrao do spring ROLE_...
+
+9 - Criar uma classe (pkg /config) de configuracao (@Configuration) SecurityConfig com um metodo (@Bean) para liberar os endpoints para desenvolvimento.
+10 - 
