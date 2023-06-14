@@ -1,9 +1,14 @@
 package com.devsuperior.demo.entities;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,8 +22,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
-public class User {
+public class User implements UserDetails, Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -100,5 +107,35 @@ public class User {
 	@Override
 	public int hashCode() {
 		return id != null ? id.hashCode() : 0;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.roles;
+	}
+
+	@Override
+	public String getUsername() {
+		return this.email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return Boolean.TRUE;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return Boolean.TRUE;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return Boolean.TRUE;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return Boolean.TRUE;
 	}
 }

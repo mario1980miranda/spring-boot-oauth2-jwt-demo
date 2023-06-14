@@ -34,3 +34,13 @@ Adicionar Spring Security
     Testar com implements CommandLineRunner
     syso -> passwordEncode("123456")
     adicionar o hash no seed no lugar da senha
+
+Checklist Spring Security
+12 - Implementar GrantedAuthority e Serializable na classe Role
+12.1 - Override em getAuthority()
+13 - Implementar UserDetails na classe User
+13.1 - Implementar metodos e retornar TRUE para eles
+13.2 - getUsername() retorna o email
+13.3 - getAuthorities() retorna roles
+14 - Implementar component service UserDetailsService.loadUserByUsername
+
