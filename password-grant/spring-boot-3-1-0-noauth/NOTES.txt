@@ -42,16 +42,38 @@ Checklist Spring Security
 13.1 - Implementar metodos e retornar TRUE para eles
 13.2 - getUsername() retorna o email
 13.3 - getAuthorities() retorna roles
-14 - Implementar component service UserDetailsService.loadUserByUsername
+14 - Liberar o acesso ao frame do banco H2
 15 - Nova classe @Service UserService implements UserDetailsService
     Implementar metodo / Exception UsernameNotFoundException
-16 - Liberar o acesso ao frame do banco H2
-17 - Criar interface UserDetailsProjection
+16 - Criar interface UserDetailsProjection
     String getUsername();
 	String getPassword();
 	Long getRoleId();
 	String getAuthority();
-18 - Criar interface UserRepository
-    Buscar usuario e roles por email :
+17 - Criar interface UserRepository
+    Buscar usuario com roles por email :
     adicionar metodo para retornar uma lista da projection a partir de uma native-query passando o e-mail do usuario
-19 - 
+18 - No UserService
+    chamar o UserRepository
+    se lista vazia throw
+    percorrer a lista de projection transormando em User
+
+19 - Adicionar as dependencias AuthServer e ResourceServer do spring
+20 - Adicionar as configuracoes CLIENT_ID, CLIENT_SECRET, jwt.duration e CORS
+21 - Criar novo pacote customgrant
+22.a - Copiar as classes de config do Auth e Resource server do projeto demo 3.1.0
+22.b - Copiar as classes do pacote customgrant do projeto demo 3.1.0
+22.c - excluir classe de config SecurityConfig
+
+
+Implementação customizada do password grant
+Authorization server
+Habilitar Authorization server
+Configurar token (codificação, formato, assinatura)
+Configurar autenticação / password encoder
+Registrar aplicação cliente
+Resource server
+Configurar controle de acesso aos recursos
+Configurar CSRF, CORS
+Configurar token
+Liberar H2 Console no modo teste
