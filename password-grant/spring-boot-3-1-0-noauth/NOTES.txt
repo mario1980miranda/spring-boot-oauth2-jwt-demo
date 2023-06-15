@@ -65,6 +65,19 @@ Checklist Spring Security
 22.b - Copiar as classes do pacote customgrant do projeto demo 3.1.0
 22.c - excluir classe de config SecurityConfig
 
+23. Implementar @Config class Authorization Server
+    Implementar @Bean do PasswordEncoder
+    Implementar @Bean/@Order(2) SecurityFilterChain asSecurityFilterChain
+    Configurar o token com as classes customizadas
+    Configurar para usar token JWT
+    Implementar @Bean para configurar a assinatura do token com RSA
+    Implementar @Bean para jwtDecoder
+    Implementar @Bean para tokenCustomizer
+    Implementar @Bean authorizationServerSettings
+    Implementar @Bean clientSettings
+    Implementar @Bean tokenSettings
+    Implementar @Bean para registeredClientRepository
+
 
 Implementação customizada do password grant
 Authorization server
