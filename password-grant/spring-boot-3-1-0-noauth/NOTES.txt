@@ -78,6 +78,14 @@ Checklist Spring Security
     Implementar @Bean tokenSettings
     Implementar @Bean para registeredClientRepository
 
+24. Implementar ResourceServerConfig
+    @Bean para configurar o tokenJWT, liberar o console h2, CROS
+
+25. Controle de acesso por perfil e rota
+    Acessar recurso com o token (no Postman: Authorization = Bearer Token)
+    No ProductController adicionar @PreAuthorize("hasRole('???')")
+
+
 
 Implementação customizada do password grant
 Authorization server
